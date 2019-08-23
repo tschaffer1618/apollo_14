@@ -34,4 +34,9 @@ describe Astronaut, type: :model do
     expect(@buzz.total_time_in_space(@buzz)).to eq(1900)
     expect(@laika.total_time_in_space(@laika)).to eq(1550)
   end
+
+  it "should list missions in alphabetical order by title" do
+    expect(@buzz.alphabetical_missions(@buzz)).to eq([@academy_training, @zurg])
+    expect(@laika.alphabetical_missions(@laika)).to eq([@academy_training, @sputnik])
+  end
 end

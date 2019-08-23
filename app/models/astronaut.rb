@@ -11,4 +11,8 @@ class Astronaut < ApplicationRecord
   def total_time_in_space(astronaut)
     astronaut.missions.sum(:time_in_space)
   end
+
+  def alphabetical_missions(astronaut)
+    astronaut.missions.order(:title)
+  end
 end

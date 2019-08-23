@@ -9,9 +9,14 @@
 Mission.destroy_all
 Astronaut.destroy_all
 
-Astronaut.create!(name: "Buzz Lightyear", age: 24, job: "Space Ranger")
-Astronaut.create!(name: "Laika", age: 5, job: "Space Dog")
+buzz = Astronaut.create!(name: "Buzz Lightyear", age: 24, job: "Space Ranger")
+laika = Astronaut.create!(name: "Laika", age: 5, job: "Space Dog")
 
-Mission.create!(title: "Academy Training", time_in_space: 1300)
-Mission.create!(title: "Attack on Emperor Zurg", time_in_space: 60)
-Mission.create!(title: "Sputnik 2", time_in_space: 250)
+academy_training = Mission.create!(title: "Academy Training", time_in_space: 1300)
+zurg = Mission.create!(title: "Attack on Emperor Zurg", time_in_space: 60)
+sputnik = Mission.create!(title: "Sputnik 2", time_in_space: 250)
+
+academy_training.astronauts << buzz
+academy_training.astronauts << laika
+zurg.astronauts << buzz
+sputnik.astronauts << laika

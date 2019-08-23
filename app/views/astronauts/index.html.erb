@@ -9,5 +9,6 @@
     <% astronaut.missions.each do |mission| %>
       <p><%= mission.title %>
     <% end %>
+    <h4>Total Time in Space: <%= astronaut.total_time_in_space(astronaut) %> days</h4>
   </section>
 <% end %>

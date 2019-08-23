@@ -56,6 +56,17 @@ describe "Astronaut Index Page" do
       expect(page).to have_content(@academy_training.title)
       expect(page).to have_content(@sputnik.title)
     end
+  end
 
+  it "shows the total time in space for each astronaut" do
+    visit "/astronauts"
+
+    within "#astronaut-#{@buzz.id}" do
+      expect(page).to have_content("Total Time in Space: 1900 days")  
+    end
+
+    within "#astronaut-#{@laika.id}" do
+      expect(page).to have_content("Total Time in Space: 1550 days")
+    end
   end
 end

@@ -2,8 +2,12 @@
 <h3>Average Astronaut Age: <%= @average_age %></h3>
 <% @astronauts.each do |astronaut| %>
   <section id="astronaut-<%=astronaut.id%>">
-    <p>=Name: <%= astronaut.name %></p>
-    <p>=Age: <%= astronaut.age %></p>
-    <p>=Job: <%= astronaut.job %></p>
+    <p>Name: <%= astronaut.name %></p>
+    <p>Age: <%= astronaut.age %></p>
+    <p>Job: <%= astronaut.job %></p>
+    <h4>Missions:</h4>
+    <% astronaut.missions.each do |mission| %>
+      <p><%= mission.title %>
+    <% end %>
   </section>
 <% end %>
